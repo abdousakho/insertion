@@ -4,17 +4,17 @@
           <ul class="nav">
             <li class="nav-item">
               <a href="javascript:void(0)" class="nav-link">
-                A PROPOS
+                Creative Tim
               </a>
             </li>
             <li class="nav-item">
               <a href="javascript:void(0)" class="nav-link">
-                SUIVI-INSERTION
+                About Us
               </a>
             </li>
             <li class="nav-item">
               <a href="javascript:void(0)" class="nav-link">
-                
+                Blog
               </a>
             </li>
           </ul>
@@ -22,8 +22,8 @@
             ©
             <script>
               document.write(new Date().getFullYear())
-            </script> ONFP <i class=""></i> by
-            <a href="javascript:void(0)" target="_blank">www.onfp.sn</a>Tous droits réservés.
+            </script> made with <i class="tim-icons icon-heart-2"></i> by
+            <a href="javascript:void(0)" target="_blank">Creative Tim</a> for a better web.
           </div>
         </div>
       </footer>

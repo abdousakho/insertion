@@ -4,9 +4,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <title>{{ config('app.name', 'Laravel') }}</title>
+
+  {{-- <title>
+    Black Dashboard by Creative Tim
+  </title> --}}
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
@@ -16,8 +20,6 @@
   <link href="{{ asset('assets/css/black-dashboard.css?v=1.0.0')}}" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="{{ asset('assets/demo/demo.css')}}" rel="stylesheet" />
-
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
 <body class="">
@@ -40,9 +42,7 @@
         </div>
       </div>
       <!-- End Navbar -->
-  @section('content')
-  @include('layout.content')
-  @show
+    @include('layout.content')
 	@include('layout.footer')
     </div>
   </div>

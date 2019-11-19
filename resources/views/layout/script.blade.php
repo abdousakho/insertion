@@ -131,6 +131,3 @@
 
     });
   </script>
-
-  
-@stack('scripts')

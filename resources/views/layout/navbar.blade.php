@@ -1,4 +1,4 @@
- <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
+ <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent fixed-top">
         <div class="container-fluid">
           <div class="navbar-wrapper">
             <div class="navbar-toggle d-inline">
@@ -8,7 +8,10 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:void(0)">Tableau de bord</a>
+            {{-- <a class="navbar-brand" href="javascript:void(0)">Dashboard</a> --}}
+            <a class="navbar-brand" href="{{ url('/home') }}">
+              {{ config('app.name', 'Laravel') }}
+          </a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -19,7 +22,7 @@
             <ul class="navbar-nav ml-auto">
               <li class="search-bar input-group">
                 <button class="btn btn-link" id="search-button" data-toggle="modal" data-target="#searchModal"><i class="tim-icons icon-zoom-split"></i>
-                  <span class="d-lg-none d-md-block">recherche</span>
+                  <span class="d-lg-none d-md-block">Recherche</span>
                 </button>
               </li>
               <li class="dropdown nav-item">
@@ -51,37 +54,42 @@
               <li class="dropdown nav-item">
                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                   <div class="photo">
-                    <img src="../assets/img/anime3.png" alt="Profile Photo">
+                    <img src="{{ asset('assets/img/anime3.png')}}" alt="Profile Photo">
                   </div>
-                  <b class="caret d-none d-lg-block d-xl-block"></b>
+                  {{-- <b class="caret d-none d-lg-block d-xl-block"></b>
                   <p class="d-lg-none">
-                    Deconnexion
-                  </p>
+                    Log out
+                  </p> --}}
                 </a>
                 <ul class="dropdown-menu dropdown-navbar">
                   <li class="nav-link">
-                    <a href="javascript:void(0)" class="nav-item dropdown-item">Profile</a>
+                    <a href="javascript:void(0)" class="nav-item dropdown-item">Profile utilisateur</a>
                   </li>
                   <li class="nav-link">
                     <a href="javascript:void(0)" class="nav-item dropdown-item">Parametre</a>
                   </li>
-                  {{-- <li class="dropdown-divider"></li> --}}
-                  {{-- <li class="nav-link">
+                  <li class="nav-link">
+                    <a id="navbarDropdown" class="nav-item dropdown-item" href="javascript:void(0)">
+                      {{ Auth::user()->name }} <span class="caret"></span>
+                  </a>
+                  </li>
+                 {{--  <li class="dropdown-divider"></li> --}}
+                 {{--  <li class="nav-link">
                     <a href="javascript:void(0)" class="nav-item dropdown-item">Log out</a>
                   </li> --}}
-                  
-                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
+                  <li class="nav-link">
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="nav-item dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                            {{ __('Deconnexion') }}
+                        </a>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                </div>
-                
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
                 </ul>
               </li>
               <li class="separator d-lg-none"></li>

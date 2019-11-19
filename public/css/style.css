@@ -1,0 +1,30 @@
+.content-home{
+    height: 300px;
+    background-color: green;
+    margin: 0px auto;
+    border-radius: 5px;
+}
+
+.content-home .titre-bienvenu{
+    color:#fff;
+  
+    margin-top: 130px;
+    font-size: 42px;
+    text-align: center;
+}
+#app{
+    margin-top: 0px;
+    padding-top: 0px;
+}
+.apropos{
+    margin: 15px;
+    margin: 75px;
+
+}
+.apropos h3{
+    color:#bbb;
+}
+
+.apropos p{
+    font-size: 18px;
+}
