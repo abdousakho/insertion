@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Administrateur;
+use App\situationprofessionel;
 use Illuminate\Http\Request;
-use App\Role;
-use App\User;
-use Yajra\Datatables\Datatables;
 
-class AdministrateursController extends Controller
+class situationprofessionelsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +14,7 @@ class AdministrateursController extends Controller
      */
     public function index()
     {
-        return view('administrateurs.index');
+        //
     }
 
     /**
@@ -44,10 +41,10 @@ class AdministrateursController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Administrateur  $administrateur
+     * @param  \App\situationprofessionel  $situationprofessionel
      * @return \Illuminate\Http\Response
      */
-    public function show(Administrateur $administrateur)
+    public function show(situationprofessionel $situationprofessionel)
     {
         //
     }
@@ -55,10 +52,10 @@ class AdministrateursController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Administrateur  $administrateur
+     * @param  \App\situationprofessionel  $situationprofessionel
      * @return \Illuminate\Http\Response
      */
-    public function edit(Administrateur $administrateur)
+    public function edit(situationprofessionel $situationprofessionel)
     {
         //
     }
@@ -67,10 +64,10 @@ class AdministrateursController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Administrateur  $administrateur
+     * @param  \App\situationprofessionel  $situationprofessionel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Administrateur $administrateur)
+    public function update(Request $request, situationprofessionel $situationprofessionel)
     {
         //
     }
@@ -78,17 +75,11 @@ class AdministrateursController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Administrateur  $administrateur
+     * @param  \App\situationprofessionel  $situationprofessionel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Administrateur $administrateur)
+    public function destroy(situationprofessionel $situationprofessionel)
     {
         //
-    }
-
-    public function list(Request $request)
-    {
-        $administrateurs=Administrateur::with('user')->get();
-        return Datatables::of($administrateurs)->make(true);
     }
 }

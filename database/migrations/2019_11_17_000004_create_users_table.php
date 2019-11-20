@@ -29,7 +29,7 @@ class CreateUsersTable extends Migration
             $table->string('name', 200)->nullable();
             $table->string('telephone', 200)->nullable();
             $table->string('email', 200)->nullable();
-            $table->binary('fichier')->nullable();
+            $table->string('fichier',200)->nullable();
             $table->string('matricule', 200)->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();

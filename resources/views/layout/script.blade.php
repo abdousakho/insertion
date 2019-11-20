@@ -12,7 +12,9 @@
   <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="{{ asset('assets/js/black-dashboard.min.js?v=1.0.0')}}"></script>
   <!-- Black Dashboard DEMO methods, don't include it in your project! -->
-  <script src="{{ asset('assets/demo/demo.js')}}"></script>
+  <script src="{{ asset('assets/demo/demo.js')}}"></script>  
+  <script src="{{ asset('vendor/datatables/jquery.dataTables.js') }}"></script>
+  <script src="{{ asset('vendor/datatables/dataTables.bootstrap4.js') }}"></script>
   <script>
     $(document).ready(function() {
       $().ready(function() {
@@ -131,3 +133,5 @@
 
     });
   </script>
+  
+@stack('scripts')

@@ -7,7 +7,7 @@
   <header class="bg-primary text-white">
     <div class="container text-center">
       <h1> {{ __("Bienvenue à  l'ONFP")}} </h1>
-      <p class="lead">{{ ('socièté de production et de distribution d\'eau potable au Sénégal!') }}</p>
+      <p class="lead">{{ ('Office national de Formation professionnelle!') }}</p>
     </div>
   </header>
 

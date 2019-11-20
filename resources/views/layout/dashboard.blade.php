@@ -42,7 +42,11 @@
         </div>
       </div>
       <!-- End Navbar -->
+      <div class="content">
+      @section('content')
     @include('layout.content')
+    @show
+  </div>
 	@include('layout.footer')
     </div>
   </div>

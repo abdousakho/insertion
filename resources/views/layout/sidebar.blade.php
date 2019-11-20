@@ -19,7 +19,7 @@
             </a>
           </li> --}}
           <li>
-            <a href="./icons.html">
+            <a href="{{ route('administrateurs.index') }}">
               <i class="tim-icons icon-atom"></i>
               <p>Administrateur</p>
             </a>
