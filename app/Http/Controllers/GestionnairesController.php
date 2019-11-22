@@ -14,7 +14,7 @@ class GestionnairesController extends Controller
      */
     public function index()
     {
-        //
+        return view('gestionnaires.index');
     }
 
     /**
@@ -81,5 +81,12 @@ class GestionnairesController extends Controller
     public function destroy(Gestionnaire $gestionnaire)
     {
         //
+    }
+
+
+    public function list(Request $request)
+    {
+        $gestionnaires=Gestionnaire::with('user')->get();
+        return Datatables::of($gestionnaires)->make(true);
     }
 }

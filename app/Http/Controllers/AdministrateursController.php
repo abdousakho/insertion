@@ -21,13 +21,38 @@ class AdministrateursController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    /* public function create(array $data)
     {
-        //
+        $user = User::create([
+            'matricule' => $data['matricule'],
+            'prenom' => $data['prenom'],
+            'nom' => $data['nom'],
+            'telephone' => $data['telephone'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
+        return view('administrateurs.create',compact('user'));
+    } */
+
+    
+    /**
+     * Create a new user instance after a valid registration.
+     *
+     * @param  array  $data
+     * @return \App\User
+     */
+    protected function create(array $data)
+    {
+           User::create([
+            'prenom' => $data['prenom'],
+            'nom' => $data['nom'],
+            'telephone' => $data['telephone'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+        ]);
+         return view('administrateurs.create',compact('user'));
     }
 
     /**

@@ -19,4 +19,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/administrateurs/list', 'AdministrateursController@list')->name('administrateurs.list');
+Route::get('/gestionnaires/list', 'GestionnairesController@list')->name('gestionnaires.list');
 Route::resource('/administrateurs', 'AdministrateursController');
+Route::resource('/gestionnaires', 'GestionnairesController');
+
+/* Route pour la creation d'un administrateur */
+Route::get('/administrateurs/create', function () {
+    return view('administrateurs.create');
+}); 

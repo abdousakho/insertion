@@ -28,3 +28,9 @@
 .apropos p{
     font-size: 18px;
 }
+
+.en-tete{
+    background-color: #09099e;
+    color: white;
+    text-align: center;
+}

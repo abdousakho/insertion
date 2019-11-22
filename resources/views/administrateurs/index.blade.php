@@ -19,7 +19,7 @@
                 <div class="card-body">
                       <div class="table-responsive">
                           <div align="right">
-                            <a href="#"><div class="btn btn-success">Nouveau Utilisateur&nbsp;<i class="fas fa-user-plus"></i></div></a>
+                            <a href="/insertion/public/administrateurs/create"><div class="btn btn-success">Nouveau Utilisateur&nbsp;<i class="fas fa-user-plus"></i></div></a>
                           </div>
                           <br />
                         <table class="table table-bordered table-striped" width="100%" cellspacing="0" id="table-administrateurs">
