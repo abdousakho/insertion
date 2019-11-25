@@ -20,43 +20,43 @@
           </li> --}}
           <li>
             <a href="{{ route('administrateurs.index') }}">
-              <i class="tim-icons icon-atom"></i>
+              <i class="fas fa-user-graduate"></i>
               <p>Administrateur</p>
             </a>
           </li>
           <li>
             <a href="{{ route('gestionnaires.index') }}">
-              <i class="tim-icons icon-pin"></i>
+              <i class="fas fa-user-friends"></i>
               <p>gestionnaire</p>
             </a>
           </li>
           <li>
-            <a href="./notifications.html">
-              <i class="tim-icons icon-bell-55"></i>
+            <a href="./formations.index">
+              <i class="fas fa-sitemap"></i>
               <p>formation</p>
             </a>
           </li>
           <li>
-            <a href="./user.html">
-              <i class="tim-icons icon-single-02"></i>
+            <a href="./profil utilisateur.index">
+              <i class="fas fa-users"></i>
               <p>Profile d'utilisateur</p>
             </a>
           </li>
           <li>
-            <a href="./tables.html">
-              <i class="tim-icons icon-puzzle-10"></i>
-              <p>Oprateurs</p>
+            <a href="./operateurs.index">
+              <i class="far fa-address-card"></i>
+              <p>Operateurs</p>
             </a>
           </li>
           <li>
-            <a href="./typography.html">
-              <i class="tim-icons icon-align-center"></i>
+            <a href="./demande.index">
+              <i class="fas fa-user-friends"></i>
               <p>Demande</p>
             </a>
           </li>
           <li>
             <a href="./rtl.html">
-              <i class="tim-icons icon-world"></i>
+              <i class="fas fa-images"></i>
               <p>Liste des formations</p>
             </a>
           </li>

@@ -21,7 +21,7 @@
           <div class="collapse navbar-collapse" id="navigation">
             <ul class="navbar-nav ml-auto">
               <li class="search-bar input-group">
-                <button class="btn btn-link" id="search-button" data-toggle="modal" data-target="#searchModal"><i class="tim-icons icon-zoom-split"></i>
+                <button class="btn btn-link" id="Recherche-button" data-toggle="modal" data-target="#searchModal"><i class="tim-icons icon-zoom-split"></i>
                   <span class="d-lg-none d-md-block">Recherche</span>
                 </button>
               </li>
@@ -36,10 +36,6 @@
                 <ul class="dropdown-menu dropdown-menu-right dropdown-navbar">
                   <li class="nav-link">
                     <a href="#" class="nav-item dropdown-item">Mike John responded to your email</a>
-                  </li>
-                  <li class="nav-link">
-                    <a href="javascript:void(0)" class="nav-item dropdown-item">You have 5 more tasks</a>
-                  </li>
                   <li class="nav-link">
                     <a href="javascript:void(0)" class="nav-item dropdown-item">Your friend Michael is in town</a>
                   </li>

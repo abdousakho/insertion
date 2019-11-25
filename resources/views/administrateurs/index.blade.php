@@ -14,12 +14,12 @@
               <div class="card"> 
                   <div class="card-header">
                       <i class="fas fa-table"></i>
-                      Liste des utilisateurs
+                      Liste des administrateurs
                   </div>              
                 <div class="card-body">
                       <div class="table-responsive">
                           <div align="right">
-                            <a href="/insertion/public/administrateurs/create"><div class="btn btn-success">Nouveau Utilisateur&nbsp;<i class="fas fa-user-plus"></i></div></a>
+                            <a href="/insertion/public/administrateurs/create"><div class="btn btn-success">Nouveau administrateur&nbsp;<i class="fas fa-user-plus"></i></div></a>
                           </div>
                           <br />
                         <table class="table table-bordered table-striped" width="100%" cellspacing="0" id="table-administrateurs">
@@ -69,11 +69,9 @@
                 </button>
               </div>
               <div class="modal-body">
-                cliquez sur close pour annuler
+                cliquez sur fermer pour annuler
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-danger"><i class="fas fa-times">&nbsp;Delete</i></button>
+              <div class="modal-footer">fermer</button>
               </div>
             </div>
           </div>
