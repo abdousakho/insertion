@@ -63,7 +63,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h6 class="modal-title" id="exampleModalLabel">Êtes-vous sûr de bien vouloir supprimer cet admin ?</h6>
+                <h6 class="modal-title" id="exampleModalLabel">Êtes-vous sûr de bien vouloir supprimer cet gestionnaire ?</h6>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -71,7 +71,9 @@
               <div class="modal-body">
                 cliquez sur fermer pour annuler
               </div>
-              <div class="modal-footer">fermer</button>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">fermer</button>
+                <button type="submit" class="btn btn-danger"><i class="fas fa-times">&nbsp;supprimer</i></button>
               </div>
             </div>
           </div>

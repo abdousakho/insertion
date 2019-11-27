@@ -108,8 +108,13 @@ class GestionnairesController extends Controller
      */
     public function update(Request $request, Gestionnaire $gestionnaire)
     {
-        //
-    }
+        //$utilisateur = User::find($id);
+        $gestionnaire = Administrateur::find($id);
+        $utilisateur=$administrateur->user;
+        //return $utilisateur;
+        return view('administrateurs.update', compact('administrateur','utilisateur','id'));
+      }
+  
 
     /**
      * Remove the specified resource from storage.

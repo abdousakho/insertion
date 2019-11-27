@@ -39,7 +39,7 @@
           <li>
             <a href="./profil utilisateur.index">
               <i class="fas fa-users"></i>
-              <p>Profile d'utilisateur</p>
+              <p>Profile beneficiaire</p>
             </a>
           </li>
           <li>
@@ -55,7 +55,7 @@
             </a>
           </li>
           <li>
-            <a href="./rtl.html">
+            <a href="./liste des formations.index">
               <i class="fas fa-images"></i>
               <p>Liste des formations</p>
             </a>

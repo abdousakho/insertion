@@ -128,7 +128,7 @@ class AdministrateursController extends Controller
       $administrateur = Administrateur::find($id);
       $utilisateur=$administrateur->user;
       //return $utilisateur;
-      return view('administrateurs.update', compact('administrateur','utilisateur','id'));
+      return view('administrateurs.update',  compact('administrateur','utilisateur','id'));
     }
 
     /**
@@ -138,23 +138,50 @@ class AdministrateursController extends Controller
      * @param  \App\Administrateur  $administrateur
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Administrateur $administrateur)
-    {
-        //
-    }
+        public function update(Request $request, $id)
+        {
+            $this->validate(
+                $request, 
+                [
+                    'matricule'     => 'required|string|max:50',
+                    'prenom'        => 'required|string|max:50',
+                    'nom'           => 'required|string|max:50',
+                    'telephone'     => 'required|string|max:50',
+                    'email'         => "required|email|max:255|unique:users,email"
+                ]);
+    
+            $Administrateur = Administrateur::find($id);
+            $utilisateur=$Administrateur->user;
+    
+            $roles_id = Role::where('name','Administrateur')->first()->id;
+    
+            $utilisateur->name           =      $request->input('nom');
+            $utilisateur->firstname      =      $request->input('prenom');
+            $utilisateur->email          =      $request->input('email');
+            $utilisateur->telephone      =      $request->input('telephone');
+            $utilisateur->roles_id       =      $roles_id;
+    
+            $utilisateur->save();
+    
+            $administrateur->matricule   =     $request->input('matricule');
+            $administrateur->users_id    =     $utilisateur->id;
+    
+            $administrateur->save();
+            
+            return redirect()->route('administrateurs.index',compact('id'))->with('success','utilisateur modifier avec succès !');
+        }
 
-    /**
+        /*
      * Remove the specified resource from storage.
-     *
      * @param  \App\Administrateur  $administrateur
      * @return \Illuminate\Http\Response
      */
     public function destroy(Administrateur $administrateur)
      {
-            $administrateur->delete();
-            $message = $administrateur->user->firstname.' '.$administrateur->user->name.' a été supprimé(e)';
-            return redirect()->route('administrateurs.index')->with(compact('message'));
-            //return $administrateur;
+        $administrateur->delete();
+        $message = $Administrateur->user->firstname.' '.$Administrateur->user->name.' a été supprimé(e)';
+        return redirect()->route('administrateurs.index')->with(compact('message'));
+        //return $administrateur;
         }
     
     
