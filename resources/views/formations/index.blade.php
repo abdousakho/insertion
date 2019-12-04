@@ -14,27 +14,28 @@
               <div class="card"> 
                   <div class="card-header">
                       <i class="fas fa-table"></i>
-                      Liste des gestionnaires
+                      Liste des formations
                   </div>              
                 <div class="card-body">
                       <div class="table-responsive">
                           <div align="right">
-                            <a href="/insertion/public/gestionnaires/create"><div class="btn btn-success">Nouveau gestionnaire&nbsp;<i class="fas fa-user-plus"></i></div></a>
+                            <a href="/insertion/public/formations/create"><div class="btn btn-success">Nouvelle formation&nbsp;<i class="fas fa-user-plus"></i></div></a>
                           </div>
                           <br />
                         <table class="table table-bordered table-striped" width="100%" cellspacing="0" id="table-administrateurs">
                           <thead class="table-dark">
                             <tr>
                               <th>ID</th>
-                              <th>Matricule</th>
-                              <th>Nom</th>
-                              <th>Prenom</th>
-                              <th>Email</th>
+                              <th>Intitulé</th>
+                              <th>Domaine</th>
+                              <th>Niveau</th>
+                              <th>Année</th>
+                            {{--   <th>Email</th>
                               <th>Téléphone</th>
-                              <th>Action</th>
+                              <th>Action</th> --}}
                             </tr>
                           </thead>
-                          <tfoot class="table-dark">
+                         {{--  <tfoot class="table-dark">
                               <tr>
                                 <th>ID</th>
                                 <th>Matricule</th>
@@ -44,7 +45,7 @@
                                 <th>Téléphone</th>
                                 <th>Action</th>
                               </tr>
-                            </tfoot>
+                            </tfoot> --}}
                           <tbody>
                            
                           </tbody>
@@ -87,7 +88,7 @@
           $('#table-administrateurs').DataTable( { 
             "processing": true,
             "serverSide": true,
-            "ajax": "{{ route('gestionnaires.list')}}",
+            "ajax": "{{ route('administrateurs.list')}}",
             columns: [
                     { data: 'id', name: 'id' },
                     { data: 'user.matricule', name: 'user.matricule' },
@@ -102,8 +103,8 @@
                         {
                         "data": null,
                         "render": function (data, type, row) {
-                        url_e =  "{!! route('gestionnaires.edit',':id')!!}".replace(':id', data.id);
-                        url_d =  "{!! route('gestionnaires.destroy',':id')!!}".replace(':id', data.id);
+                        url_e =  "{!! route('administrateurs.edit',':id')!!}".replace(':id', data.id);
+                        url_d =  "{!! route('administrateurs.destroy',':id')!!}".replace(':id', data.id);
                         return '<a href='+url_e+'  class=" btn btn-primary edit " title="Modifier"><i class="far fa-edit">&nbsp;</i></a>&nbsp;'+
                         '<div class="btn btn-danger delete btn_delete_administrateur" title="Supprimer" data-href='+url_d+'><i class="fas fa-times">&nbsp;</i></div>';
                         },

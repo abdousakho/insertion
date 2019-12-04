@@ -24,9 +24,7 @@ class CreateNiveausTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->char('uuid', 36);
-            $table->string('domainesActivite', 200)->nullable();
             $table->string('name', 200);
-            $table->date('annee')->nullable();
             $table->softDeletes();
             $table->nullableTimestamps();
         });

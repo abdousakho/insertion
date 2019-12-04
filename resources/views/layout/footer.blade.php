@@ -23,7 +23,7 @@
             <script>
               document.write(new Date().getFullYear())
             </script> C-R-D-I<i class={{-- "tim-icons icon-heart-2" --}}></i>
-            <a href="http://www.onfp.sn/" target=>onfp</a> copyright Tous Droit Reserves.
+            <a href="http://www.onfp.sn/">onfp</a> copyright Tous Droit Reserves.
           </div>
         </div>
       </footer>

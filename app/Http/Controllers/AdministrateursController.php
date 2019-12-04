@@ -46,6 +46,7 @@ class AdministrateursController extends Controller
     protected function create(array $data)
     {
            User::create([
+            'matricule' => $data['matricule'],
             'prenom' => $data['prenom'],
             'nom' => $data['nom'],
             'telephone' => $data['telephone'],
@@ -179,7 +180,7 @@ class AdministrateursController extends Controller
     public function destroy(Administrateur $administrateur)
      {
         $administrateur->delete();
-        $message = $Administrateur->user->firstname.' '.$Administrateur->user->name.' a été supprimé(e)';
+        $message = $administrateur->user->firstname.' '.$administrateur->user->name.' a été supprimé(e)';
         return redirect()->route('administrateurs.index')->with(compact('message'));
         //return $administrateur;
         }

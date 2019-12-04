@@ -8,7 +8,7 @@
             
           </a>
           <a href="javascript:void(0)" class="simple-text logo-normal">
-        SUIVI-INSERTION
+  Suivi/évaluation
           </a>
         </div>
         <ul class="nav">
@@ -20,26 +20,27 @@
           </li> --}}
           <li>
             <a href="{{ route('administrateurs.index') }}">
-              <i class="fas fa-user-graduate"></i>
+             {{--  <i class="fas fa-user-graduate"></i> --}}
+             <i class="fas fa-user-friends"></i>
               <p>Administrateur</p>
             </a>
           </li>
-          <li>
+         <li>
             <a href="{{ route('gestionnaires.index') }}">
               <i class="fas fa-user-friends"></i>
               <p>gestionnaire</p>
             </a>
           </li>
           <li>
-            <a href="./formations.index">
+            <a href="{{ route('formations.index') }}">
               <i class="fas fa-sitemap"></i>
-              <p>formation</p>
+              <p>Formations et Module</p>
             </a>
           </li>
           <li>
             <a href="./profil utilisateur.index">
               <i class="fas fa-users"></i>
-              <p>Profile beneficiaire</p>
+              <p>beneficiaire</p>
             </a>
           </li>
           <li>

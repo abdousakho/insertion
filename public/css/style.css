@@ -30,7 +30,20 @@
 }
 
 .en-tete{
-    background-color: #09099e;
+    background-color: #3e8de7;
     color: white;
     text-align: center;
+}
+
+.btn-login{
+    background-color: #3e8de7 !important;
+    color:#fff;
+}
+
+.nav-link{
+    translate: unset;
+}
+
+.lead{
+    margin-left: 20px;
 }

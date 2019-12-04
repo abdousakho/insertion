@@ -23,7 +23,21 @@ Route::get('/gestionnaires/list', 'GestionnairesController@list')->name('gestion
 Route::resource('/administrateurs', 'AdministrateursController');
 Route::resource('/gestionnaires', 'GestionnairesController');
 
+Route::get('/formations/list', 'ModulesController@list')->name('formations.list');
+Route::resource('/formations', 'ModulesController');
+
+
 /* Route pour la creation d'un administrateur */
 Route::get('/administrateurs/create', function () {
     return view('administrateurs.create');
+
+}); 
+Route::get('/gestionnaires/create', function () {
+    return view('gestionnaires.create');
+
+}); 
+
+
+Route::get('/formations/create', function () {
+    return view('formations.create');
 }); 

@@ -26,14 +26,18 @@ class CreateBeneficiairesTable extends Migration
             $table->char('uuid', 36);
             $table->unsignedInteger('users_id');
             $table->unsignedInteger('structures_id');
-            $table->unsignedInteger('situation professionel_id');
             $table->unsignedInteger('niveau_id');
             $table->dateTime('date_debut')->nullable();
             $table->dateTime('date_fin')->nullable();
+            $table->unsignedInteger('formations_id');
+            $table->unsignedInteger('regions_id');
+            $table->unsignedInteger('situationprofessionels_id');
 
-            $table->index(["situation professionel_id"], 'fk_beneficiaire_situation professionel1_idx');
+            $table->index(["situationprofessionels_id"], 'fk_beneficiaires_situationprofessionels1_idx');
 
             $table->index(["structures_id"], 'fk_beneficiaire_structures1_idx');
+
+            $table->index(["regions_id"], 'fk_beneficiaires_regions1_idx');
 
             $table->index(["users_id"], 'fk_beneficiaire_users1_idx');
 
@@ -52,13 +56,18 @@ class CreateBeneficiairesTable extends Migration
                 ->onDelete('no action')
                 ->onUpdate('no action');
 
-            $table->foreign('situation professionel_id', 'fk_beneficiaire_situation professionel1_idx')
-                ->references('id')->on('situationprofessionels')
+            $table->foreign('niveau_id', 'fk_beneficiaire_niveau1_idx')
+                ->references('id')->on('niveaus')
                 ->onDelete('no action')
                 ->onUpdate('no action');
 
-            $table->foreign('niveau_id', 'fk_beneficiaire_niveau1_idx')
-                ->references('id')->on('niveaus')
+            $table->foreign('regions_id', 'fk_beneficiaires_regions1_idx')
+                ->references('id')->on('regions')
+                ->onDelete('no action')
+                ->onUpdate('no action');
+
+            $table->foreign('situationprofessionels_id', 'fk_beneficiaires_situationprofessionels1_idx')
+                ->references('id')->on('situationprofessionels')
                 ->onDelete('no action')
                 ->onUpdate('no action');
         });

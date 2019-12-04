@@ -39,13 +39,13 @@
           <li>
             <a href="./user.html">
               <i class="tim-icons icon-single-02"></i>
-              <p>Profile d'utilisateur</p>
+              <p>Profil d'utilisateur</p>
             </a>
           </li>
           <li>
             <a href="./tables.html">
               <i class="tim-icons icon-puzzle-10"></i>
-              <p>Oprateurs</p>
+              <p>Operateurs</p>
             </a>
           </li>
           <li>

@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Administrateur;
 use App\Gestionnaire;
+use App\User;
+use App\Role;
 use Illuminate\Http\Request;
+use Yajra\Datatables\Datatables;
 
 class GestionnairesController extends Controller
 {
@@ -24,7 +28,8 @@ class GestionnairesController extends Controller
      */
     public function create()
     {
-        //
+        $roles = Role::get();
+        return view('gestionnaires.create',compact('roles'));
     }
 
     /**
@@ -34,11 +39,11 @@ class GestionnairesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    
     {
         $this->validate(
             $request, [
-                'matricule'     => 'required|string|max:50',
+              /*   'matricule'     => 'required|string|max:50', */
+              
                 'prenom'        => 'required|string|max:50',
                 'nom'           => 'required|string|max:50',
                 'telephone'     => 'required|string|max:50',
@@ -54,7 +59,7 @@ class GestionnairesController extends Controller
             ]
         );
         //return view('administrateurs.index');
-       $roles_id = Role::where('name','Gestionnaire')->first()->id;
+       $roles_id = Role::where('name','Administrateur')->first()->id;
         $utilisateur = new User([            
             'name'           =>      $request->input('nom'),
             'firstname'      =>      $request->input('prenom'),
@@ -73,17 +78,16 @@ class GestionnairesController extends Controller
         ]);
 
         $administrateur->save();
-        return redirect()->route('administrateurs.index')->with('success','utilisateur ajoutée avec succès !');
+        return redirect()->route('gestionnaires.index')->with('success','utilisateur ajoutée avec succès !');
     }
-    
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Gestionnaire  $gestionnaire
+     * @param  \App\Administrateur  $administrateur
      * @return \Illuminate\Http\Response
      */
-    public function show(Gestionnaire $gestionnaire)
+    public function show(Administrateur $administrateur)
     {
         //
     }
@@ -91,50 +95,77 @@ class GestionnairesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Gestionnaire  $gestionnaire
+     * @param  \App\Administrateur  $administrateur
      * @return \Illuminate\Http\Response
      */
-    public function edit(Gestionnaire $gestionnaire)
+    public function edit($id)
     {
-        //
+        
+        //$utilisateur = User::find($id);
+        $administrateur = Administrateur::find($id);
+        $utilisateur=$administrateur->user;
+        //return $utilisateur;
+        return view('gestionnaires.update', compact('gestionnaires','utilisateur','id'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Gestionnaire  $gestionnaire
+     * @param  \App\Administrateur  $administrateur
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Gestionnaire $gestionnaire)
+    public function update(Request $request, $id)
     {
-        //$utilisateur = User::find($id);
-        $gestionnaire = Administrateur::find($id);
+        $this->validate(
+            $request, 
+            [
+               'matricule'     => 'required|string|max:50',
+                'prenom'        => 'required|string|max:50',
+                'nom'           => 'required|string|max:50',
+                'telephone'     => 'required|string|max:50',
+                'email'         => "required|email|max:255|unique:users,email,".$id,
+            ]);
+
+        $administrateur = Administrateur::find($id);
         $utilisateur=$administrateur->user;
-        //return $utilisateur;
-        return view('administrateurs.update', compact('administrateur','utilisateur','id'));
-      }
-  
+
+        $roles_id = Role::where('name','gestionnaire')->first()->id;
+
+        $utilisateur->name           =      $request->input('nom');
+        $utilisateur->firstname      =      $request->input('prenom');
+        $utilisateur->email          =      $request->input('email');
+        $utilisateur->telephone      =      $request->input('telephone');
+        $utilisateur->roles_id       =      $roles_id;
+
+        $utilisateur->save();
+
+        $gestionnaires->matricule   =     $request->input('matricule');
+        $gestionnaires->users_id    =     $utilisateur->id;
+
+        $administrateur->save();
+        
+        return redirect()->route('gestionnaires.index')->with('success','utilisateur modifier avec succès !');
+    }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Gestionnaire  $gestionnaire
+     * @param  \App\Administrateur  $administrateur
      * @return \Illuminate\Http\Response
      */
     public function destroy(Gestionnaire $gestionnaire)
-        {
-            $administrateur->delete();
-            $message = $administrateur->user->firstname.' '.$administrateur->user->name.' a été supprimé(e)';
-            return redirect()->route('administrateurs.index')->with(compact('message'));
-            //return $administrateur;
-        }
-    
-
+    {
+        $gestionnaire->delete();
+        $message = $gestionnaire->user->firstname.' '.$gestionnaire->user->name.' a été supprimé(e)';
+        return redirect()->route('gestionnaires.index')->with(compact('message'));
+        //return $gestionnaires;
+    }
 
     public function list(Request $request)
     {
         $gestionnaires=Gestionnaire::with('user')->get();
         return Datatables::of($gestionnaires)->make(true);
     }
+ 
 }

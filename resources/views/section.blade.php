@@ -2,8 +2,9 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-8 mx-auto">
-              <h2>A PROPOS</h2>
-              <p class="lead"><h2>La suivie-insertion qu'est ce que c'est  ?</h2>
+              <h2>A propos</h2>
+    <p class="lead"><h2>Le suivi/évaluation de béneficiares</h2>
+      </h2> Qu'est ce que c'est:</h2>
               </li>  Le dispositif correspond ici au mécanisme pour assurer un suivi et une évaluation réussis de
                 l’insertion des bénéficiaires de formation mais aussi à l’évaluation de la situation
                 professionnelle des bénéficiaires.
@@ -37,7 +38,7 @@ Doter le travailleur ou le demandeur d’emploi, notamment dans une optique d’
         <div class="container">
           <div class="row">
             <div class="col-lg-8 mx-auto">
-              <h2>SERVICES:</h2>
+              <h2>Services:</h2>
               <p class="lead">
                 les quatre (4) domaines d’intervention de l’Office sont :
                 <li>la recherche </li>
@@ -84,18 +85,26 @@ Doter le travailleur ou le demandeur d’emploi, notamment dans une optique d’
                   Antennes
                   KOLDA
                   Adresse:
-                  
-                  Tél:
+
+                  Tél:33 996 22 60
                   
                   KAOLACK
-                  Adresse:
+                  Adresse: 
+
+                  Tél:33 941 65 05
+                  SAINT-LOUIS
+                  Adresse: 33 961 62 29
                   
                   Tél:
-                  
-                  SAINT-LOUIS
+                  MATAM
+                  Adresse: 
+
+                  Tél:33 523 94 93 
+                KEDOUGOU
                   Adresse:
-                  
-                  Tél:</p>
+
+                  Tél:33 897 75 86 
+                </p>
             </div>
           </div>
         </div>

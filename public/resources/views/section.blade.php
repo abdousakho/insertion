@@ -2,7 +2,7 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-8 mx-auto">
-              <h2>A PROPOS</h2>
+              <h2>A propos </h2>
               <p class="lead">
                 <h2>Qui sommes-nous ?</h2>
 
@@ -34,7 +34,7 @@ Doter le travailleur ou le demandeur d’emploi, notamment dans une optique d’
         <div class="container">
           <div class="row">
             <div class="col-lg-8 mx-auto">
-              <h2>SERVICES:</h2>
+              <h2>Services:</h2>
               <p class="lead">
                 les quatre (4) domaines d’intervention de l’Office sont :
                 <li>la recherche </li>
@@ -80,18 +80,23 @@ Doter le travailleur ou le demandeur d’emploi, notamment dans une optique d’
                   
                   Antennes
                   KOLDA
-                  Adresse:
-                  
-                  Tél:
+                  Adresse: 
+                  Tél:33 996 22 60
                   
                   KAOLACK
                   Adresse:
-                  
-                  Tél:
+                  tel: 33 941 65 25
                   
                   SAINT-LOUIS
+                  Adresse: 
+                  tel:33 961 62 29
+
+                  MATAM
                   Adresse:
-                  
+                  tel:33 523 94 93
+                  KEDOUGOU
+                  Adresse:
+                  tel: 33 897 75 86 
                   Tél:</p>
             </div>
           </div>
